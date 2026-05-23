@@ -74,12 +74,12 @@ Telegram-бот для мониторинга сообщений об атака
 ## Установка
 
 ```bash
-cd /root/tgbots/tatarstanalertbot
+mkdir /root/Russia-AlertBot
+cd /root/Russia-AlertBot
 
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env
 nano .env
 ```
 
@@ -112,7 +112,7 @@ STARTUP_PRIME_EXISTING=true
 ## Запуск вручную
 
 ```bash
-cd /root/tgbots/tatarstanalertbot
+cd /root/Russia-AlertBot
 source venv/bin/activate
 python3 bot.py
 ```
@@ -120,7 +120,7 @@ python3 bot.py
 ## Автозапуск через systemd
 
 ```bash
-BOT_DIR="/root/tgbots/tatarstanalertbot"
+BOT_DIR="/root/Russia-AlertBot"
 SERVICE_NAME="rfalertbot"
 
 sudo tee "/etc/systemd/system/${SERVICE_NAME}.service" > /dev/null <<EOF
@@ -165,7 +165,7 @@ sudo journalctl -u rfalertbot -f
 ## Проверка перед запуском
 
 ```bash
-cd /root/tgbots/tatarstanalertbot
+cd /root/Russia-AlertBot
 source venv/bin/activate
 python3 -m py_compile bot.py
 python3 bot.py
@@ -219,7 +219,7 @@ alerts_bot.sqlite3
 ├── bot.py
 ├── sources.json
 ├── requirements.txt
-├── .env.example
+├── .env
 ├── README.md
 └── alerts_bot.sqlite3
 ```
